@@ -40,8 +40,11 @@ def main():
     Rainfall = st.text_input("Rainfall")
     result = ""
     if st.button("Predict"):
-       result = predict_crop(N,P,K,Temp,Hum,Ph,Rainfall)
-       st.title("You should grow "+result[0]+" in your area")
+        try:
+            result = predict_crop(N,P,K,Temp,Hum,Ph,Rainfall)
+            st.title("You should grow "+result[0]+" in your area")
+        except Exception as e:
+            print("Error",e)
     if st.button("About"):
         st.text("Lets Learn")
         st.text("Built with ❤ by Hardik")
