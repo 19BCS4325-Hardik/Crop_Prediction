@@ -43,8 +43,8 @@ def main():
         try:
             result = predict_crop(N,P,K,Temp,Hum,Ph,Rainfall)
             st.title("You should grow "+result[0]+" in your area")
-        except Exception as e:
-            st.title(e)
+        except Exception:
+            st.title("Some Error is there please check your input values.")
     if st.button("About"):
         st.text("Lets Learn")
         st.text("Built with ❤ by Hardik")
